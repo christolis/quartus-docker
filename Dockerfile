@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install libc6 libncurses5 libstdc++6 tcsh libxext6 libx11-6 libxau6 libxdmcp6 libfreetype6 qt4-dev-tools libqtwebkit-dev libpng-tools fontconfig
 RUN mkdir ../install
 RUN cd ../install
-RUN curl -O https://archive.org/download/quartus-9.1-sp2-free-linux 91sp2_quartus_free_linux.tar
+RUN curl -LJO "https://archive.org/download/quartus-9.1-sp2-free-linux/91sp2_quartus_free_linux.tar"
 RUN tar -xvf 91sp2_quartus_free_linux.tar
 RUN cd quartus-free
-RUN ./install
+RUN ./install --auto
